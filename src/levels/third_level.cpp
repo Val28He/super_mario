@@ -34,8 +34,8 @@ void ThirdLevel::init_data() {
 	ui_factory->create_ship({350, 20}, 20, 7);
 	
 	ui_factory->create_enemy({65, 5}, 3, 2);
-	ui_factory->create_enemy({105, 5}, 3, 2);
-	ui_factory->create_enemy({140, 5}, 3, 2);
+	ui_factory->create_jump_enemy({105, 5}, 3, 2);
+	ui_factory->create_jump_enemy({140, 5}, 3, 2);
 	ui_factory->create_enemy({210, 5}, 3, 2);
 	ui_factory->create_enemy({245, 5}, 3, 2);
 	ui_factory->create_enemy({260, 5}, 3, 2);
