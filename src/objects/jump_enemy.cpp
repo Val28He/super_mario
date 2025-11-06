@@ -8,6 +8,7 @@ JumpEnemy::JumpEnemy(const Coord& top_left, const int width, const int height)
 	: RectMapMovableAdapter(top_left, width, height) {
 	vspeed = 0.2;
 	hspeed = 0;
+	is_fly = false;
 }
 
 biv::Rect JumpEnemy::get_rect() const noexcept {

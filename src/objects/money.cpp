@@ -8,6 +8,7 @@ Money::Money(const Coord& top_left, const int width, const int height)
 	: RectMapMovableAdapter(top_left, width, height) {
 	vspeed = 0;
 	hspeed = 0.2;
+	is_fly = false;
 }
 
 biv::Rect Money::get_rect() const noexcept {

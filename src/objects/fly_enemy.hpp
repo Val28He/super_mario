@@ -2,14 +2,17 @@
 
 #include "collisionable.hpp"
 #include "movable.hpp"
+#include "updatable.hpp"
 #include "rect.hpp"
 #include "rect_map_movable_adapter.hpp"
 #include "speed.hpp"
 
 namespace biv {
-	class JumpEnemy : public RectMapMovableAdapter, public Movable, public Collisionable {
+	class FlyEnemy : public RectMapMovableAdapter, public Movable, public Updatable, public Collisionable {
+		private:
+			int c;
 		public:
-			JumpEnemy(const Coord& top_left, const int width, const int height);
+			FlyEnemy(const Coord& top_left, const int width, const int height);
 
 			Rect get_rect() const noexcept override;
 			Speed get_speed() const noexcept override;
@@ -18,5 +21,6 @@ namespace biv {
 			void process_horizontal_static_collision(Rect*) noexcept override;
 			void process_mario_collision(Collisionable*) noexcept override;
 			void process_vertical_static_collision(Rect*) noexcept override;
+			void update() noexcept override;
 	};
 }

@@ -26,6 +26,10 @@ void Game::add_static_obj(Rect* obj) {
 	static_objs.push_back(obj);
 }
 
+void Game::add_updatable(Updatable* obj) {
+	updatable_objs.push_back(obj);
+}
+
 void Game::check_horizontally_static_collisions() noexcept {
 	for (Collisionable* obj: collisionable_objs) {
 		for (Rect* static_obj: static_objs) {
@@ -75,6 +79,12 @@ void Game::check_vertically_static_collisions() noexcept {
 				break;
 			}
 		}
+	}
+}
+
+void Game::update() noexcept {
+	for (Updatable* obj: updatable_objs) {
+		obj->update();
 	}
 }
 
@@ -136,10 +146,15 @@ void Game::remove_objs() {
 	movable_objs.clear();
 	static_objs.clear();
 	remove_mario();
+	updatable_objs.clear();
 }
 
 void Game::remove_static_obj(Rect* obj) {
 	remove_obj(static_objs, obj);
+}
+
+void Game::remove_updatable(Updatable* obj) {
+	remove_obj(updatable_objs, obj);
 }
 
 void Game::start_level() noexcept {

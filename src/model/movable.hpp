@@ -11,17 +11,20 @@ namespace biv {
 
 			float vspeed = 0;
 			float hspeed = 0;
+			bool is_fly;
 
 		protected:
 			Movable() = default;
 			Movable(
 				const Coord& top_left, 
 				const int width, const int height, 
-				const float vspeed, const float hspeed
+				const float vspeed, const float hspeed, 
+				const bool is_fly
 			);
 
 		public:
 			float get_vspeed() const noexcept;
+			bool get_fly() const noexcept;
 			void jump() noexcept;
 			void move_horizontal_offset(const float offset) noexcept;
 			void move_vertical_offset(const float offset) noexcept;

@@ -3,6 +3,7 @@
 #include "console_box.hpp"
 #include "console_enemy.hpp"
 #include "console_jump_enemy.hpp"
+#include "console_fly_enemy.hpp"
 #include "console_full_box.hpp"
 #include "console_game_map.hpp"
 #include "console_mario.hpp"
@@ -19,6 +20,7 @@ namespace biv {
 			std::vector<ConsoleShip*> ships;
 			ConsoleMario* mario = nullptr;
 			std::vector<ConsoleJumpEnemy*> jump_enemies;
+			std::vector<ConsoleFlyEnemy*> fly_enemies;
 			std::vector<ConsoleEnemy*> enemies;
 			std::vector<ConsoleMoney*> moneys;
 
@@ -33,6 +35,9 @@ namespace biv {
 				const Coord& top_left, const int width, const int height
 			) override;
 			void create_jump_enemy(
+				const Coord& top_left, const int width, const int height
+			) override;
+			void create_fly_enemy(
 				const Coord& top_left, const int width, const int height
 			) override;
 			void create_full_box(

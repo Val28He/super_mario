@@ -38,6 +38,6 @@ void ThirdLevel::init_data() {
 	ui_factory->create_jump_enemy({140, 5}, 3, 2);
 	ui_factory->create_enemy({210, 5}, 3, 2);
 	ui_factory->create_enemy({245, 5}, 3, 2);
-	ui_factory->create_enemy({260, 5}, 3, 2);
-	ui_factory->create_enemy({280, 5}, 3, 2);
+	ui_factory->create_fly_enemy({260, 5}, 3, 2);
+	ui_factory->create_fly_enemy({280, 5}, 3, 2);
 }

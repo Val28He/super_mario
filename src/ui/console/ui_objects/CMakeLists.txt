@@ -3,6 +3,7 @@ target_sources(${PROJECT_NAME}
 		console_box.cpp
 		console_enemy.cpp
 		console_jump_enemy.cpp
+		console_fly_enemy.cpp
 		console_full_box.cpp
 		console_mario.cpp
 		console_money.cpp

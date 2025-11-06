@@ -5,17 +5,23 @@ using biv::Movable;
 Movable::Movable(
 	const Coord& top_left, 
 	const int width, const int height, 
-	const float vspeed, const float hspeed
+	const float vspeed, const float hspeed,
+	const bool is_fly
 ) {
 	this->top_left = top_left;
 	this->width = width;
 	this->height = height;
 	this->vspeed = vspeed;
 	this->hspeed = hspeed;
+	this->is_fly = is_fly;
 }
 
 float Movable::get_vspeed() const noexcept {
 	return vspeed;
+}
+
+bool Movable::get_fly() const noexcept {
+	return is_fly;
 }
 
 void Movable::jump() noexcept {
@@ -40,8 +46,10 @@ void Movable::move_horizontally() noexcept {
 }
 
 void Movable::move_vertically() noexcept {
-	if (vspeed < MAX_V_SPEED) {
-		vspeed += V_ACCELERATION;
+	if (is_fly == false) {
+		if (vspeed < MAX_V_SPEED) {
+			vspeed += V_ACCELERATION;
+		}
 	}
 	top_left.y += vspeed;
 }
